@@ -4,8 +4,10 @@
 
 
 module.exports.limitFunctionCallCount = (cb, n) => {
+    let count = 0;
     const func = () => {
-        for (let i = 0; i < n; i++) {
+        if (count < n) {
+            count += 1;
             cb();
         }
     }
