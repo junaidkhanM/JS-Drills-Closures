@@ -9,9 +9,10 @@ module.exports.cacheFunction = (cb) => {
     const cache = {};
     const func = (arg) => {
         if (cache[arg] === cb(arg)) {
-            return console.log(cache);
+            return cache[arg];
         } else {
             cache[arg] = cb(arg);
+            return cache[arg];
         }
     }
 

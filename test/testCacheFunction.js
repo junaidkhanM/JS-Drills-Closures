@@ -5,7 +5,7 @@ const cb = (num) => num * num;
 
 const result = cacheFunction(cb);
 
-result(5);
-result(3);
-result(4);
-result(5);
+console.log(result(5));
+console.log(result(3));
+console.log(result(4));
+console.log(result(5));
