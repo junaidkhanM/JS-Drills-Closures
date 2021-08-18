@@ -10,4 +10,5 @@ result();
 result();
 result();
 result();
-result();
+
+console.log(result());

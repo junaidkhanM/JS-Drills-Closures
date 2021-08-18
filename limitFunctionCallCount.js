@@ -9,6 +9,8 @@ module.exports.limitFunctionCallCount = (cb, n) => {
         if (count < n) {
             count += 1;
             cb();
+        } else {
+            return null;
         }
     }
 

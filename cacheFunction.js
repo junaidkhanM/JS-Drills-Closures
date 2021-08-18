@@ -8,12 +8,10 @@
 module.exports.cacheFunction = (cb) => {
     const cache = {};
     const func = (arg) => {
-        if (cache[arg] === cb(arg)) {
-            return cache[arg];
-        } else {
+        if (!cache.hasOwnProperty(arg)) {
             cache[arg] = cb(arg);
-            return cache[arg];
-        }
+        } 
+        return cache[arg];
     }
 
     return func;
